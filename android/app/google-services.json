@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "899029673802",
+    "firebase_url": "https://loja-virt-82a0d.firebaseio.com",
+    "project_id": "loja-virt-82a0d",
+    "storage_bucket": "loja-virt-82a0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899029673802:android:5752c295ece5c2a228c3b3",
+        "android_client_info": {
+          "package_name": "com.evangelista.david.loja_virt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899029673802-od54cemh61pvqjog1liu1m96kujr2f54.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfGBw_dvSrqnRrH9r91r2wSt61w4mcLDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899029673802-od54cemh61pvqjog1liu1m96kujr2f54.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
