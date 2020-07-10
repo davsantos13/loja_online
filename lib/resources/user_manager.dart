@@ -1,0 +1,30 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
+import 'package:loja_virt/helpers/firebase_errors.dart';
+import 'package:loja_virt/models/user.dart';
+
+class UserManager extends ChangeNotifier {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  bool loading = false;
+
+  Future<void> signIn({User user, Function onFail, Function onSuccess}) async {
+    try {
+      setLoading(true);
+      final AuthResult result = await auth.signInWithEmailAndPassword(
+          email: user.email, password: user.senha);
+
+      onSuccess();
+    } on PlatformException catch (e) {
+      onFail(getError(e.code));
+    }
+
+    setLoading(false);
+  }
+
+  void setLoading(bool value) {
+    loading = value;
+    notifyListeners();
+  }
+}
