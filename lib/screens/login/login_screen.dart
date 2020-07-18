@@ -16,6 +16,16 @@ class LoginScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Entrar'),
           centerTitle: true,
+          actions: [
+            FlatButton(
+              padding: EdgeInsets.only(top: 8, right: 8),
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/signup');
+              },
+              child: Text('Cadastre-se'),
+              textColor: Colors.white,
+            )
+          ],
         ),
         body: Center(
             child: Card(
