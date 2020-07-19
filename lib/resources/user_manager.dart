@@ -32,6 +32,12 @@ class UserManager extends ChangeNotifier {
     loading = false;
   }
 
+  void signOut() {
+    auth.signOut();
+    user = null;
+    notifyListeners();
+  }
+
   Future<void> signUp({User user, Function onFail, Function onSuccess}) async {
     loading = true;
     try {
@@ -47,6 +53,7 @@ class UserManager extends ChangeNotifier {
     } on PlatformException catch (e) {
       onFail(getError(e.code));
     }
+    loading = false;
   }
 
   bool get loading => _loading;
@@ -55,9 +62,10 @@ class UserManager extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool get isLoggedIn => user != null;
+
   Future<void> _loadCurrentUser({FirebaseUser firebaseUser}) async {
-    FirebaseUser userAtual =
-        firebaseUser != null ? firebaseUser : await auth.currentUser();
+    final FirebaseUser userAtual = firebaseUser ?? await auth.currentUser();
     if (userAtual != null) {
       final DocumentSnapshot docUser =
           await firestore.collection('users').document(userAtual.uid).get();

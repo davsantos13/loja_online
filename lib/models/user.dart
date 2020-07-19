@@ -11,7 +11,7 @@ class User {
 
   User.fromDocument(DocumentSnapshot doc) {
     this.id = doc.documentID;
-    this.nome = doc.data['nome'] as String;
+    this.nome = doc.data['name'] as String;
     this.email = doc.data['email'] as String;
   }
 

@@ -103,7 +103,9 @@ class LoginScreen extends StatelessWidget {
                                             backgroundColor: Colors.red,
                                           ));
                                         },
-                                        onSuccess: () {});
+                                        onSuccess: () {
+                                          Navigator.of(context).pop();
+                                        });
                                   }
                                 },
                           color: Theme.of(context).primaryColor,
