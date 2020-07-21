@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virt/common/drawer/custom_drawer.dart';
-import 'package:loja_virt/models/page_manager.dart';
+import 'package:loja_virt/resources/page_manager.dart';
 import 'package:loja_virt/screens/login/login_screen.dart';
+import 'package:loja_virt/screens/products/products_screen.dart';
 import 'package:provider/provider.dart';
 
 class BaseScreen extends StatelessWidget {
@@ -22,14 +23,7 @@ class BaseScreen extends StatelessWidget {
               title: const Text('Home2'),
             ),
           ),
-          Scaffold(
-            drawer: CustomDrawer(),
-            appBar: AppBar(
-              centerTitle: true,
-              elevation: 0,
-              title: const Text('Home3'),
-            ),
-          ),
+          ProductsScreen(),
           Scaffold(
             drawer: CustomDrawer(),
             appBar: AppBar(
